@@ -16,7 +16,7 @@ module.exports = {
     contentBase: './dist'
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.jsx', '.json', '.js']
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
   },
   module: {
     rules: [
