@@ -5,7 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 module.exports = {
   mode: 'development',
   entry: {
-    app: './src/index.js'
+    app: './src/index.tsx'
   },
   output: {
     filename: '[name].bundle.js',
@@ -21,16 +21,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(jsx?)$/,
+        test: /\.(jsx?)|(tsx?)$/,
         exclude: [/node_modules/],
         use: {
           loader: 'babel-loader',
           options: {
-            presets: [
-              '@babel/preset-react',
-              //   '@babel/preset-typescript',
-              '@babel/preset-env'
-            ]
+            presets: ['@babel/preset-react', '@babel/preset-typescript']
           }
         }
       },
