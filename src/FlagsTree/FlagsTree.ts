@@ -1,7 +1,7 @@
 import BinaryTree from '../modules/BinaryTree'
 import Node from '../modules/Node'
 import NV from '../models/NodeValue.model'
-import { t01, t02 } from './t00'
+import { t01, t02, t03, t04, t05, t06, t07, t08 } from './t00'
 
 const bt: BinaryTree<NV> = new BinaryTree(
   new Node<NV>(
@@ -31,7 +31,13 @@ const bt: BinaryTree<NV> = new BinaryTree(
             t01,
             t02
           ),
-          null
+          new Node<NV>(
+            {
+              question: 'Czy flaga zawiera 1 gwiazdę lub 2 gwiazdy lub krzyż?'
+            },
+            t03,
+            t04
+          )
         ),
         null
       ),
