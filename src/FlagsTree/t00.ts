@@ -345,7 +345,73 @@ const t04 = new Node<NV>(
   )
 )
 
-const t05 = null
+const t05 = new Node<NV>(
+  {
+    question: 'Czy flaga zawiera okrąg lub krzyż?'
+  },
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera ukośny pasek?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera pionowe paski?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/german-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/belgian-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        flagPaths: ['img/congo_republic_of-flag']
+      },
+      null,
+      null
+    )
+  ),
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera okrąg?'
+    },
+    new Node<NV>(
+      {
+        flagPaths: ['img/jamaican-flag']
+      },
+      null,
+      null
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera całe żółte koło?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/kyrgyzstan-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/macedonian-flag']
+        },
+        null,
+        null
+      )
+    )
+  )
+)
 
 const t06 = null
 

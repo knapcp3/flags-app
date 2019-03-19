@@ -39,7 +39,19 @@ const bt: BinaryTree<NV> = new BinaryTree(
             t04
           )
         ),
-        null
+        new Node<NV>(
+          {
+            question: 'Czy flaga zawiera gwiazdy?'
+          },
+          new Node<NV>(
+            {
+              question: 'Czy flaga zawiera zielony pasek?'
+            },
+            t05,
+            null
+          ),
+          null
+        )
       ),
       new Node<NV>({ question: '' }, null, null)
     ),
