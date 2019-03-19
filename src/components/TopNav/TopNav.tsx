@@ -27,7 +27,7 @@ export default class TopNav extends Component<any, any> {
           {stage === Stage.FlagSelecting && (
             <React.Fragment>Select one flag</React.Fragment>
           )}
-          {stage === Stage.End && <React.Fragment>ENDDD</React.Fragment>}
+          {stage === Stage.End && <React.Fragment>Wybieranie zakończone</React.Fragment>}
         </div>
       </div>
     )

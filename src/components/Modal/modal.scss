@@ -1,0 +1,39 @@
+#modal {
+  position: fixed;
+  background: rgba($color: #000000, $alpha: 0.7);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:empty {
+    display: none;
+  }
+
+  > div {
+    position: relative;
+    background-color: white;
+    max-width: 800px;
+    min-width: 300px;
+    padding: 35px;
+    border-radius: 5px;
+    text-align: center;
+
+    i {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+
+    .modal-flag-img {
+      height: auto;
+      display: block;
+      margin-top: 30px;
+      max-width: 600px;  
+    }
+  }
+}
