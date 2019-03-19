@@ -1,32 +1,34 @@
-import React, { Component } from 'react'
+import React, { Component, RefObject } from 'react'
 import FlagPic from './Flag'
-import { importAll } from './../../modules/helpers'
 import './flags.scss'
 import Flag from './../../models/Flag.model'
 
 export default class Flags extends Component<any, any> {
+  private flagsRef: RefObject<any>
+
   constructor(props: any) {
     super(props)
-    const flags = importAll(
-      require.context('./../../img/flags', false, /\.(png|jpe?g|svg)$/)
-    ).map((f: string) => Flag.create(f))
-    this.state = {
-      flags,
-      showModal: true
-    }
+    this.flagsRef = React.createRef()
   }
 
   public componentDidMount() {
-    // this.setState({
-    //   flags: this.state.flags.push(im)
-    // })
+    this.flagsRef.current.addEventListener('click', this.handleFlagsClick)
+  }
+
+  public handleFlagsClick = (e: MouseEvent) => {
+    const target = e.target as HTMLElement
+    if (target.classList.contains('flag-img')) {
+      const { selectedFlag } = this.props
+      selectedFlag(target.getAttribute('src'))
+      this.flagsRef.current.removeEventListener('click', this.handleFlagsClick)
+    }
   }
 
   public render() {
-    const { flags } = this.state
+    const { flags, selectedFlag } = this.props
     return (
-      <section className="flags-container">
-        {flags.map((f: Flag, i: number) => (
+      <section className="flags-container" ref={this.flagsRef}>
+        {flags.map((f: Flag) => (
           <FlagPic
             isSelected={f.isSelected}
             isRejected={f.isRejected}

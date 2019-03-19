@@ -1,12 +1,6 @@
 import React, { Component } from 'react'
 
 export default class Flags extends Component<any, any> {
-  //   constructor(props: any) {
-  //     super(props)
-  //     this.setState({
-  //     })
-  //   }
-
   public render() {
     const { path, isSelected, isRejected } = this.props
     const maybeRejected = isRejected ? 'rejected' : ''
