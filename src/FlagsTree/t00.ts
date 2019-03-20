@@ -561,6 +561,96 @@ const t07 = new Node<NV>(
   )
 )
 
-const t08 = null
+const t08 = new Node<NV>(
+  {
+    question: 'Czy flaga zawiera żółtą gwiazdę?'
+  },
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera czarną gwiazdę?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera czerwoną gwiazdę?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/senegalese-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/french_guiana-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera gwiazdę na samym środku?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/guinea-bissau-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/ghana-flag']
+        },
+        null,
+        null
+      )
+    )
+  ),
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera dokładnie 2 poziome paski?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera pionowe paski?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/vietnamese-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/cameroon-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy gwiazda jest jedynym symbolem na fladze?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/angolan-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/burkina_faso-flag']
+        },
+        null,
+        null
+      )
+    )
+  )
+)
 
 export { t01, t02, t03, t04, t05, t06, t07, t08 }

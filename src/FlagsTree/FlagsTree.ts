@@ -56,7 +56,7 @@ const bt: BinaryTree<NV> = new BinaryTree(
                 'Czy flaga zawiera jedną gwiazdę oraz nie zawiera księżyca?'
             },
             t07,
-            null
+            t08
           )
         )
       ),
