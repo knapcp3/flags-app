@@ -48,12 +48,12 @@ const bt: BinaryTree<NV> = new BinaryTree(
               question: 'Czy flaga zawiera zielony pasek?'
             },
             t05,
-            null
+            t06
           ),
           null
         )
       ),
-      new Node<NV>({ question: '' }, null, null)
+      null
     ),
     new Node<NV>(
       {

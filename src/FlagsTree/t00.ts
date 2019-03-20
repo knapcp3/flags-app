@@ -413,7 +413,85 @@ const t05 = new Node<NV>(
   )
 )
 
-const t06 = null
+const t06 = new Node<NV>(
+  {
+    question: 'Czy flaga zawiera poziomy, zielony pasek?'
+  },
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera dokładnie 3 pionowe paski?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera symbol lwa?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/benin-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/sri_lankan-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera czerwony pasek po lewej stronie?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/malian-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/guinea-flag']
+        },
+        null,
+        null
+      )
+    )
+  ),
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera czarny kolor?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera żółty kolor na samej górze?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/bolivian-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/lithuanian-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        flagPaths: ['img/vanuatu-flag']
+      },
+      null,
+      null
+    )
+  )
+)
 
 const t07 = null
 
