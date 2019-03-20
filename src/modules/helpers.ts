@@ -19,3 +19,4 @@ export const flagPathsSubTree = (node: Node<NV>): any => {
     return (flagPaths || []).concat(flagPathsSubTree(right!))
   }
 }
+

@@ -42,7 +42,7 @@ class App extends Component<any, any> {
     })
   }
 
-  public selectedFlag = (path: string) => {
+  public onSelectedFlag = (path: string) => {
     const selected = this.state.flags[path].setIsSelected(true)
     const flags = {
       ...this.state.flags
@@ -90,10 +90,13 @@ class App extends Component<any, any> {
           stage={stage}
           selectedAnswer={this.selectedAnswer}
         />
-        <Flags flags={Object.values(flags)} selectedFlag={this.selectedFlag} />
+        <Flags
+          flags={Object.values(flags)}
+          selectedFlag={this.onSelectedFlag}
+        />
         {showModal && (
           <Modal>
-            <div>
+            <div className="modal-content">
               <Icon type="close" onClick={this.handleClose} />
               <div>Wybrana flaga/flagi:</div>
               {finalFlags.map((f: string) => (

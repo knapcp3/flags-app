@@ -2,6 +2,8 @@ import React, { Component, RefObject } from 'react'
 import FlagPic from './Flag'
 import './flags.scss'
 import Flag from './../../models/Flag.model'
+import Modal from './../Modal/Modal'
+import { Icon } from 'antd'
 
 export default class Flags extends Component<any, any> {
   private flagsRef: RefObject<any>
@@ -9,6 +11,11 @@ export default class Flags extends Component<any, any> {
   constructor(props: any) {
     super(props)
     this.flagsRef = React.createRef()
+
+    this.state = {
+      showModal: false,
+      zoomedInFlag: null
+    }
   }
 
   public componentDidMount() {
@@ -24,8 +31,17 @@ export default class Flags extends Component<any, any> {
     }
   }
 
+  public onZoomedInFlag = (fPath: string) => {
+    this.setState({ zoomedInFlag: fPath, showModal: true })
+  }
+
+  public handleClose = () => {
+    this.setState({ showModal: false })
+  }
+
   public render() {
-    const { flags, selectedFlag } = this.props
+    const { flags } = this.props
+    const { showModal, zoomedInFlag } = this.state
     return (
       <section className="flags-container" ref={this.flagsRef}>
         {flags.map((f: Flag) => (
@@ -34,8 +50,17 @@ export default class Flags extends Component<any, any> {
             isRejected={f.isRejected}
             path={f.path}
             key={f.path}
+            onZoomedInFlag={this.onZoomedInFlag}
           />
         ))}
+        {showModal && (
+          <Modal>
+            <div className="modal-content">
+              <Icon type="close" onClick={this.handleClose} />
+              <img src={zoomedInFlag} className="modal-flag-img"/>
+            </div>
+          </Modal>
+        )}
       </section>
     )
   }
