@@ -653,4 +653,145 @@ const t08 = new Node<NV>(
   )
 )
 
-export { t01, t02, t03, t04, t05, t06, t07, t08 }
+const t09 = new Node<NV>(
+  {
+    question: 'Czy flaga zawiera dokładnie 2 lub 3 poziome paski?'
+  },
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera symbol na środku?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera dokładnie 3 paski?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/bahrain-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/peru-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera liść klonu?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/hong_kong-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/canada-flag']
+        },
+        null,
+        null
+      )
+    )
+  ),
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera biały pasek na samym dole i czerwony na samej górze?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera dokładnie 2 paski?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/austrian-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/poland-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        flagPaths: ['img/indonesian-flag', 'img/monaco-flag']
+      },
+      null,
+      null
+    )
+  )
+)
+
+const t10 = null
+const t11 = null
+const t12 = null
+const t13 = null
+const t14 = null
+const t15 = null
+const t16 = null
+
+
+const t17 = null
+const t18 = null
+const t19 = null
+const t20 = null
+const t21 = null
+const t22 = null
+const t23 = null
+const t24 = null
+
+
+const t25 = null
+const t26 = null
+const t27 = null
+const t28 = null
+const t29 = null
+const t30 = null
+const t31 = null
+const t32 = null
+
+export {
+  t01,
+  t02,
+  t03,
+  t04,
+  t05,
+  t06,
+  t07,
+  t08,
+  t09,
+  t10,
+  t11,
+  t12,
+  t13,
+  t14,
+  t15,
+  t16,
+  t17,
+  t18,
+  t19,
+  t20,
+  t21,
+  t22,
+  t23,
+  t24,
+  t25,
+  t26,
+  t27,
+  t28,
+  t29,
+  t30,
+  t31,
+  t32
+}
