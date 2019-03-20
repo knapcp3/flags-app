@@ -826,7 +826,98 @@ const t10 = new Node<NV>(
   )
 )
 
-const t11 = null
+const t11 = new Node<NV>(
+  {
+    question: 'Czy flaga zawiera 3 lub więcej pasków?'
+  },
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera smoka?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera zamek?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/guyanan-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/gibraltar-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera czerwonego smoka?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/bhutan-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/welsh-flag']
+        },
+        null,
+        null
+      )
+    )
+  ),
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera dokładnie 3 pionowe paski?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera zielony kolor?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/trinidad_and_tobago-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/kenyan-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera biały pasek na środku?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/afghanistan-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/mexican-flag']
+        },
+        null,
+        null
+      )
+    )
+  )
+)
+
 const t12 = null
 const t13 = null
 const t14 = null

@@ -2,7 +2,7 @@ import BinaryTree from '../modules/BinaryTree'
 import Node from '../modules/Node'
 import NV from '../models/NodeValue.model'
 import { tx1, tx2, tx3, tx4 } from './t11'
-import { t09, t10 } from './t00'
+import { t09, t10, t11 } from './t00'
 // import { t01, t02, t03, t04, t05, t06, t07, t08 } from './t00'
 
 const bt: BinaryTree<NV> = new BinaryTree(
@@ -32,7 +32,13 @@ const bt: BinaryTree<NV> = new BinaryTree(
             t09,
             t10
           ),
-          null
+          new Node<NV>(
+            {
+              question: 'Czy flaga zawiera dokładnie 3 poziome paski?'
+            },
+            t11,
+            null
+          )
         ),
         null
       )
