@@ -702,7 +702,8 @@ const t09 = new Node<NV>(
   ),
   new Node<NV>(
     {
-      question: 'Czy flaga zawiera biały pasek na samym dole i czerwony na samej górze?'
+      question:
+        'Czy flaga zawiera biały pasek na samym dole i czerwony na samej górze?'
     },
     new Node<NV>(
       {
@@ -733,14 +734,104 @@ const t09 = new Node<NV>(
   )
 )
 
-const t10 = null
+const t10 = new Node<NV>(
+  {
+    question: 'Czy flaga zawiera dokładnie 3 poziome paski?'
+  },
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera dokładnie 2 poziome paski?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera księżyc?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/italian-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/maldives-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera czerwony wzór na białym pasku?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/madagascar-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/belarusian-flag']
+        },
+        null,
+        null
+      )
+    )
+  ),
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera symbol na środku?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera biały pasek na środku?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/bulgarian-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/hungarian-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera symbol drzewa?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/iranian-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/lebanese-flag']
+        },
+        null,
+        null
+      )
+    )
+  )
+)
+
 const t11 = null
 const t12 = null
 const t13 = null
 const t14 = null
 const t15 = null
 const t16 = null
-
 
 const t17 = null
 const t18 = null
@@ -750,7 +841,6 @@ const t21 = null
 const t22 = null
 const t23 = null
 const t24 = null
-
 
 const t25 = null
 const t26 = null
