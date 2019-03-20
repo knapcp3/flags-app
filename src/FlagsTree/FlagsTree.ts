@@ -50,7 +50,14 @@ const bt: BinaryTree<NV> = new BinaryTree(
             t05,
             t06
           ),
-          null
+          new Node<NV>(
+            {
+              question:
+                'Czy flaga zawiera jedną gwiazdę oraz nie zawiera księżyca?'
+            },
+            t07,
+            null
+          )
         )
       ),
       null

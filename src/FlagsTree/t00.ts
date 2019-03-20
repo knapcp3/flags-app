@@ -493,7 +493,73 @@ const t06 = new Node<NV>(
   )
 )
 
-const t07 = null
+const t07 = new Node<NV>(
+  {
+    question: 'Czy flaga zawiera dokładnie 5 gwiazd?'
+  },
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera czarne gwiazdy?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera księżyc?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/grenadan-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/mauritanian-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        flagPaths: ['img/sao_tome_and_principe-flag']
+      },
+      null,
+      null
+    )
+  ),
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera księżyc?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera kolor czerwony?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/macau-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/chinese-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        flagPaths: ['img/cocos_(keeling)_islands-flag']
+      },
+      null,
+      null
+    )
+  )
+)
 
 const t08 = null
 
