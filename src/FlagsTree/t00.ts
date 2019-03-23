@@ -1502,7 +1502,86 @@ const t18 = new Node<NV>(
   )
 )
 
-const t19 = null
+const t19 = new Node<NV>(
+  {
+    question: 'Czy flaga zawiera czerwony krzyż?'
+  },
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera biały i prosty krzyż?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera biały krzyż?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/finnish-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/scottish-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera niebieskie paski?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/martinique-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/greece-flag']
+        },
+        null,
+        null
+      )
+    )
+  ),
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera prosty(prostopadły) krzyż?'
+    },
+    new Node<NV>(
+      {
+        flagPaths: ['img/wallis_and_futuna-flag']
+      },
+      null,
+      null
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera biały krzyż?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/faroe_islands-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/icelandic-flag']
+        },
+        null,
+        null
+      )
+    )
+  )
+)
+
 const t20 = null
 const t21 = null
 const t22 = null
