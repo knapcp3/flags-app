@@ -124,7 +124,49 @@ const tx2 = new Node<NV>(
   )
 )
 
-const tx3 = null
+const tx3 = new Node<NV>(
+  {
+    question: 'Czy flaga zawiera żółty lub złoty kolor?'
+  },
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera krzyż?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera dokładnie 1 biały poziomy pasek?'
+      },
+      t17,
+      t18
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera krzyż św. Jerzego?'
+      },
+      t19,
+      t20
+    )
+  ),
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera krzyż lub białe gwiazdy?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera poziome paski?'
+      },
+      t21,
+      t22
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera ciemnoniebieskie tło oraz czerwony krzyż?'
+      },
+      t23,
+      t24
+    )
+  )
+)
 
 const tx4 = null
 

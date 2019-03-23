@@ -1902,7 +1902,97 @@ const t23 = new Node<NV>(
   )
 )
 
-const t24 = null
+const t24 = new Node<NV>(
+  {
+    question: 'Czy flaga zawiera nielatające zwierzęta?'
+  },
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera istotę ludzką?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera statek?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/pitcairn_islands-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/saint_helena-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera harfę?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/british_virgin_islands-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/montserrat-flag']
+        },
+        null,
+        null
+      )
+    )
+  ),
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera 2 lub więcej rodzajów zwierząt?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera delfiny?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/turks_and_caicos_islands-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/anguillan-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera żółwia?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/south_georgia_and_the_south_sandwich_islands-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/cayman_islands-flag']
+        },
+        null,
+        null
+      )
+    )
+  )
+)
 
 const t25 = null
 const t26 = null
