@@ -2,7 +2,7 @@ import BinaryTree from '../modules/BinaryTree'
 import Node from '../modules/Node'
 import NV from '../models/NodeValue.model'
 import { tx1, tx2, tx3, tx4 } from './t11'
-import { t17, t18, t19 } from './t00'
+import { t17, t18, t19, t20, t21, t22, t23 } from './t00'
 // import { t09, t10, t11, t12, t13, t14, t15, t16 } from './t00'
 // import { t01, t02, t03, t04, t05, t06, t07, t08 } from './t00'
 
@@ -47,10 +47,29 @@ const bt: BinaryTree<NV> = new BinaryTree(
               question: 'Czy flaga zawiera krzyż św. Jerzego?'
             },
             t19,
-            null
+            t20
           )
         ),
-        null
+        new Node<NV>(
+          {
+            question: 'Czy flaga zawiera krzyż lub białe gwiazdy?'
+          },
+          new Node<NV>(
+            {
+              question: 'Czy flaga zawiera poziome paski?'
+            },
+            t21,
+            t22
+          ),
+          new Node<NV>(
+            {
+              question:
+                'Czy flaga zawiera ciemnoniebieskie tło oraz czerowny krzyż?'
+            },
+            t23,
+            null
+          )
+        )
       ),
       null
     )
