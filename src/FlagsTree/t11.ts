@@ -168,6 +168,48 @@ const tx3 = new Node<NV>(
   )
 )
 
-const tx4 = null
+const tx4 = new Node<NV>(
+  {
+    question: 'Czy flaga zawiera żółty lub złoty kolor bez krzyża?'
+  },
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera gwiazdę lub kształt tarczy lub herbu?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga składa się tylko i wyłącznie z poziomych pasków?'
+      },
+      t25,
+      t26
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera 5-cio ramienną gwiazdę?'
+      },
+      t27,
+      t28
+    )
+  ),
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera gwiazdę lub ptaka?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera biały kolor?'
+      },
+      t29,
+      t30
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera żółtą lub złotą gwiazdę?'
+      },
+      t31,
+      t32
+    )
+  )
+)
 
 export { tx1, tx2, tx3, tx4 }

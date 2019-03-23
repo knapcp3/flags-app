@@ -2282,11 +2282,478 @@ const t27 = new Node<NV>(
   )
 )
 
-const t28 = null
-const t29 = null
-const t30 = null
-const t31 = null
-const t32 = null
+const t28 = new Node<NV>(
+  {
+    question: 'Czy flaga zawiera dokładnie 1 gwiazdę?'
+  },
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera czerwony pionowy pasek?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera dokładnie 2 gwiazdy?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/samoan-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/panama-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera biały pionowy pasek?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/netherlands_antilles-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/french_southern_and_antartic_lands-flag']
+        },
+        null,
+        null
+      )
+    )
+  ),
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera więcej niż 2 czerwone paski?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera trójkąt?'
+      },
+      new Node<NV>(
+        {
+          question: 'Czy flaga zawiera czerwoną gwiazdę?'
+        },
+        new Node<NV>(
+          {
+            flagPaths: ['img/chilean-flag']
+          },
+          null,
+          null
+        ),
+        new Node<NV>(
+          {
+            flagPaths: ['img/north_korean-flag']
+          },
+          null,
+          null
+        )
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/cuban-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera trójkąt?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/liberian-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/puerto_rico-flag']
+        },
+        null,
+        null
+      )
+    )
+  )
+)
+
+const t29 = new Node<NV>(
+  {
+    question:
+      'Czy flaga zawiera poziomy pasek o odcieniu niebieskiego/granatowego?'
+  },
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera żółty/złoty pasek na środku?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera zielony kolor?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/mongolian-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/eritrean-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        flagPaths: ['img/chad-flag', 'img/romanian-flag']
+      },
+      null,
+      null
+    )
+  ),
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera zielony kolor?'
+    },
+    new Node<NV>(
+      {
+        flagPaths: ['img/colombian-flag']
+      },
+      null,
+      null
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera okrąg?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/mauritius-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/new-caledonia-flag']
+        },
+        null,
+        null
+      )
+    )
+  )
+)
+
+const t30 = new Node<NV>(
+  {
+    question: 'Czy flaga zawiera niebieski pasek?'
+  },
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera symbol na środku?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera symbol słońca?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/seychelles-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/namibian-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera palmę?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/french_polynesia-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/guam-flag']
+        },
+        null,
+        null
+      )
+    )
+  ),
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera niebieski pasek na samej górze?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera okrag?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/south_african-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/paraguayan-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera niebieski pasek na dole?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/haitian-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/swaziland-flag']
+        },
+        null,
+        null
+      )
+    )
+  )
+)
+
+const t31 = new Node<NV>(
+  {
+    question: 'Czy flaga zawiera ptaka?'
+  },
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera dokładnie 1 gwiazdę?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera księżyc?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/solomon_islands-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/comoros-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera białą gwiazdę?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/aruban-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/northern_mariana_islands-flag']
+        },
+        null,
+        null
+      )
+    )
+  ),
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera żółtego lub złotego ptaka?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera orła?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/ecuadorian-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/american-samoa-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera orła?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/kiribati-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/united_states_virgin_islands-flag']
+        },
+        null,
+        null
+      )
+    )
+  )
+)
+
+const t32 = new Node<NV>(
+  {
+    question: 'Czy flaga zawiera 5-cio ramienną gwiazdę?'
+  },
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera 6-cio ramienną gwiazdę?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera księżyc?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/antigua_and_barbuda-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/malaysian-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera niebieski trójkąt?'
+      },
+      new Node<NV>(
+        {
+          question: 'Czy flaga zawiera dokładnie 3 gwiazdy?'
+        },
+        new Node<NV>(
+          {
+            flagPaths: ['img/croatian-flag']
+          },
+          null,
+          null
+        ),
+        new Node<NV>(
+          {
+            flagPaths: ['img/slovenian-flag']
+          },
+          null,
+          null
+        )
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/equatorial_guinea-flag']
+        },
+        null,
+        null
+      )
+    )
+  ),
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera dokładnie 3 gwiazdy?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera zielony kolor?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/congo_democratic-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          question: 'Czy flaga zawiera pionowy pasek?'
+        },
+        new Node<NV>(
+          {
+            flagPaths: ['img/ethiopian-flag']
+          },
+          null,
+          null
+        ),
+        new Node<NV>(
+          {
+            flagPaths: ['img/central_african_republic-flag']
+          },
+          null,
+          null
+        )
+      )
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera biały trójkąt?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/wake_island-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/philippines-flag']
+        },
+        null,
+        null
+      )
+    )
+  )
+)
 
 export {
   t01,
