@@ -1,6 +1,7 @@
 import React, { Component, MouseEvent } from 'react'
 import Flags from './Flags/Flags'
 import TopNav from './TopNav/TopNav'
+import './app.scss'
 import { importAll } from './../modules/helpers'
 import Flag from './../models/Flag.model'
 import FT from '../FlagsTree/FlagsTree'

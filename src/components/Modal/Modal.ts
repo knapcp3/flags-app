@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom'
 import './modal.scss'
 
 const modalRoot = document.getElementById('modal')
+const modalOpenClass = 'modal-open'
 
 class Modal extends React.Component {
   private el: HTMLDivElement
@@ -14,10 +15,12 @@ class Modal extends React.Component {
 
   public componentDidMount() {
     modalRoot!.appendChild(this.el)
+    document.body.classList.add(modalOpenClass)
   }
 
   public componentWillUnmount() {
     modalRoot!.removeChild(this.el)
+    document.body.classList.remove(modalOpenClass)
   }
 
   public render() {
