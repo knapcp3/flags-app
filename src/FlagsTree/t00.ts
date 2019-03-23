@@ -1422,7 +1422,86 @@ const t17 = new Node<NV>(
   )
 )
 
-const t18 = null
+const t18 = new Node<NV>(
+  {
+    question: 'Czy flaga zawiera zielony pasek?'
+  },
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera mniej lub równo 3 kolory?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera mewę?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/nicaraguan-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/midway_islands-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera gwiazdy?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/estonian-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/honduran-flag']
+        },
+        null,
+        null
+      )
+    )
+  ),
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera czarny kolor?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera okraŋ?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/sierra_leone-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/indian-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        flagPaths: ['img/lesotho-flag']
+      },
+      null,
+      null
+    )
+  )
+)
+
 const t19 = null
 const t20 = null
 const t21 = null
