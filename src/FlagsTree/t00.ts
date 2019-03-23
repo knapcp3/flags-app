@@ -1994,7 +1994,98 @@ const t24 = new Node<NV>(
   )
 )
 
-const t25 = null
+const t25 = new Node<NV>(
+  {
+    question: 'Czy flaga zawiera okrąg lub krzyż?'
+  },
+  new Node<NV>(
+    {
+      question: 'Czy flaga składa się tylko i wyłącznie z pionowych pasków?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera symbol budowli?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/czech_republic-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/cambodian-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        flagPaths: ['img/french-flag', 'img/mayotte-flag']
+      },
+      null,
+      null
+    )
+  ),
+  new Node<NV>(
+    {
+      question: 'Czy flaga zawiera żółty kolor?'
+    },
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera krzyż?'
+      },
+      new Node<NV>(
+        {
+          question: 'Czy flaga zawiera białe koło?'
+        },
+        new Node<NV>(
+          {
+            flagPaths: ['img/south_korean-flag']
+          },
+          null,
+          null
+        ),
+        new Node<NV>(
+          {
+            flagPaths: ['img/laos-flag']
+          },
+          null,
+          null
+        )
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/norwegian-flag']
+        },
+        null,
+        null
+      )
+    ),
+    new Node<NV>(
+      {
+        question: 'Czy flaga zawiera koronę?'
+      },
+      new Node<NV>(
+        {
+          flagPaths: ['img/saint-pierre_and_miquelon-flag']
+        },
+        null,
+        null
+      ),
+      new Node<NV>(
+        {
+          flagPaths: ['img/liechtenstein-flag']
+        },
+        null,
+        null
+      )
+    )
+  )
+)
+
 const t26 = null
 const t27 = null
 const t28 = null
