@@ -5,7 +5,7 @@ import './top-nav.scss'
 
 export default class TopNav extends Component<any, any> {
   public onAnswer = (answer: boolean) => (_: MouseEvent) => {
-    this.props.selectedAnswer(answer)
+    this.props.onSelectedAnswer(answer)
   }
 
   public render() {

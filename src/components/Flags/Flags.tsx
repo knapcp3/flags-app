@@ -16,20 +16,20 @@ export default class Flags extends Component<any, any> {
   }
 
   public onFlagClick = (fPath: string) => {
-    const { stage, selectedFlag } = this.props
+    const { stage, onSelectedFlag } = this.props
     if (stage === Stage.FlagSelecting) {
-      selectedFlag(fPath)
+      onSelectedFlag(fPath)
     } else {
       this.setState({ zoomedInFlag: fPath })
     }
   }
 
-  public handleClose = () => {
+  public handleZoomedInFlagClose = () => {
     this.setState({ zoomedInFlag: null })
   }
 
   public render() {
-    const { flags } = this.props
+    const { flags, finalFlags, onFinalFlagsClose } = this.props
     const { zoomedInFlag } = this.state
     return (
       <section className="flags-container">
@@ -45,8 +45,19 @@ export default class Flags extends Component<any, any> {
         {zoomedInFlag && (
           <Modal>
             <div className="modal-content">
-              <Icon type="close" onClick={this.handleClose} />
+              <Icon type="close" onClick={this.handleZoomedInFlagClose} />
               <img src={zoomedInFlag} className="modal-flag-img" />
+            </div>
+          </Modal>
+        )}
+        {finalFlags && (
+          <Modal>
+            <div className="modal-content">
+              <Icon type="close" onClick={onFinalFlagsClose} />
+              <div>Wybrana flaga/flagi:</div>
+              {finalFlags.map((f: string) => (
+                <img className="modal-flag-img" src={f} key={f} />
+              ))}
             </div>
           </Modal>
         )}

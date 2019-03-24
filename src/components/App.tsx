@@ -41,7 +41,7 @@ class App extends Component<any, any> {
     })
   }
 
-  public selectedAnswer = (answer: boolean) => {
+  public onSelectedAnswer = (answer: boolean) => {
     const { currentNode, stage, flags } = this.state
     if (stage !== Stage.Questions) {
       return
@@ -72,15 +72,15 @@ class App extends Component<any, any> {
     })
   }
 
-  public handleClose = () => {
+  public onFinalFlagsClose = () => {
     this.setState({ finalFlags: null })
   }
 
   public handleKeyAnswer = (e: KeyboardEvent) => {
     if (e.key === 'n') {
-      this.selectedAnswer(false)
+      this.onSelectedAnswer(false)
     } else if (e.key === 'y') {
-      this.selectedAnswer(true)
+      this.onSelectedAnswer(true)
     }
   }
 
@@ -109,25 +109,16 @@ class App extends Component<any, any> {
         <TopNav
           question={currentNode.value.question}
           stage={stage}
-          selectedAnswer={this.selectedAnswer}
+          onSelectedAnswer={this.onSelectedAnswer}
           reset={this.handleReset}
         />
         <Flags
           flags={Object.values(flags)}
+          finalFlags={finalFlags}
+          onFinalFlagsClose={this.onFinalFlagsClose}
           stage={stage}
-          selectedFlag={this.onSelectedFlag}
+          onSelectedFlag={this.onSelectedFlag}
         />
-        {finalFlags && (
-          <Modal>
-            <div className="modal-content">
-              <Icon type="close" onClick={this.handleClose} />
-              <div>Wybrana flaga/flagi:</div>
-              {finalFlags.map((f: string) => (
-                <img className="modal-flag-img" src={f} key={f} />
-              ))}
-            </div>
-          </Modal>
-        )}
       </section>
     )
   }
