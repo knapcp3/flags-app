@@ -1,4 +1,4 @@
-import React, { Component, MouseEvent, KeyboardEvent } from 'react'
+import React, { Component, KeyboardEvent } from 'react'
 import { Icon } from 'antd'
 import Flags from './Flags/Flags'
 import TopNav from './TopNav/TopNav'
@@ -29,7 +29,6 @@ class App extends Component<any, any> {
       flags,
       currentNode: FT.root,
       stage: Stage.FlagSelecting,
-      showModal: false,
       finalFlags: null
     }
   }
@@ -54,7 +53,6 @@ class App extends Component<any, any> {
     if (nextNode.isLeaf()) {
       this.setState({
         stage: Stage.End,
-        showModal: true,
         finalFlags: nextNode.value.flagPaths
       })
     } else {
@@ -75,7 +73,7 @@ class App extends Component<any, any> {
   }
 
   public handleClose = () => {
-    this.setState({ showModal: false })
+    this.setState({ finalFlags: null })
   }
 
   public handleKeyAnswer = (e: KeyboardEvent) => {
@@ -100,7 +98,7 @@ class App extends Component<any, any> {
   }
 
   public render() {
-    const { flags, finalFlags, currentNode, stage, showModal } = this.state
+    const { flags, finalFlags, currentNode, stage } = this.state
 
     return (
       <section
@@ -119,7 +117,7 @@ class App extends Component<any, any> {
           stage={stage}
           selectedFlag={this.onSelectedFlag}
         />
-        {showModal && (
+        {finalFlags && (
           <Modal>
             <div className="modal-content">
               <Icon type="close" onClick={this.handleClose} />
