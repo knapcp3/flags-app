@@ -14,11 +14,16 @@ export default class Flag {
   }
 
   public setIsSelected(isSel: boolean) {
-    return new Flag(this._path, isSel, this._isRejected)
+    this._isSelected = isSel
   }
 
   public setIsRejected(isRej: boolean) {
-    return new Flag(this._path, this._isSelected, isRej)
+    this._isRejected = isRej
+  }
+
+  public reset() {
+    this.setIsRejected(false)
+    this.setIsSelected(false)
   }
 
   public get isSelected(): boolean {

@@ -4,6 +4,7 @@ import './flags.scss'
 import Flag from './../../models/Flag.model'
 import Modal from './../Modal/Modal'
 import { Icon } from 'antd'
+import Stage from '../../modules/Stage'
 
 export default class Flags extends Component<any, any> {
   private flagsRef: RefObject<any>
@@ -22,12 +23,25 @@ export default class Flags extends Component<any, any> {
     this.flagsRef.current.addEventListener('click', this.handleFlagsClick)
   }
 
+  public componentDidUpdate(prevProps: any) {
+    const { stage } = this.props
+    if (stage !== prevProps.stage) {
+      if (stage === Stage.FlagSelecting) {
+        this.flagsRef.current.addEventListener('click', this.handleFlagsClick)
+      } else if (stage === Stage.Questions) {
+        this.flagsRef.current.removeEventListener(
+          'click',
+          this.handleFlagsClick
+        )
+      }
+    }
+  }
+
   public handleFlagsClick = (e: MouseEvent) => {
     const target = e.target as HTMLElement
     if (target.classList.contains('flag-img')) {
       const { selectedFlag } = this.props
       selectedFlag(target.getAttribute('src'))
-      this.flagsRef.current.removeEventListener('click', this.handleFlagsClick)
     }
   }
 
@@ -36,7 +50,7 @@ export default class Flags extends Component<any, any> {
   }
 
   public handleClose = () => {
-    this.setState({ showModal: false })
+    this.setState({ zoomedInFlag: null, showModal: false })
   }
 
   public render() {
@@ -57,7 +71,7 @@ export default class Flags extends Component<any, any> {
           <Modal>
             <div className="modal-content">
               <Icon type="close" onClick={this.handleClose} />
-              <img src={zoomedInFlag} className="modal-flag-img"/>
+              <img src={zoomedInFlag} className="modal-flag-img" />
             </div>
           </Modal>
         )}

@@ -1204,22 +1204,10 @@ const t15 = new Node<NV>(
     },
     new Node<NV>(
       {
-        question: 'Czy flaga zawiera białe gwiazdy?'
+        flagPaths: ['img/dominica-flag']
       },
-      new Node<NV>(
-        {
-          flagPaths: ['img/dominica-flag']
-        },
-        null,
-        null
-      ),
-      new Node<NV>(
-        {
-          flagPaths: ['img/abkhazian-flag']
-        },
-        null,
-        null
-      )
+      null,
+      null
     ),
     new Node<NV>(
       {

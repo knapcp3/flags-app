@@ -9,9 +9,12 @@ export default class TopNav extends Component<any, any> {
   }
 
   public render() {
-    const { question, stage } = this.props
+    const { question, stage, reset } = this.props
     return (
       <div className="top-nav-container">
+        <div>
+          <Button onClick={reset}>Reset</Button>
+        </div>
         <div className="center-content">
           {stage === Stage.Questions && (
             <React.Fragment>
@@ -25,9 +28,11 @@ export default class TopNav extends Component<any, any> {
             </React.Fragment>
           )}
           {stage === Stage.FlagSelecting && (
-            <React.Fragment>Select one flag</React.Fragment>
+            <React.Fragment>Wybierz jedną flagę</React.Fragment>
           )}
-          {stage === Stage.End && <React.Fragment>Wybieranie zakończone</React.Fragment>}
+          {stage === Stage.End && (
+            <React.Fragment>Wybieranie zakończone</React.Fragment>
+          )}
         </div>
       </div>
     )

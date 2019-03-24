@@ -1,16 +1,16 @@
-import React, { Component, MouseEvent } from 'react'
+import React, { Component, MouseEvent, KeyboardEvent } from 'react'
+import { Icon } from 'antd'
 import Flags from './Flags/Flags'
 import TopNav from './TopNav/TopNav'
-import './app.scss'
-import { importAll } from './../modules/helpers'
+import Modal from './Modal/Modal'
 import Flag from './../models/Flag.model'
+import NV from '../models/NodeValue.model'
+import { importAll } from './../modules/helpers'
 import FT from '../FlagsTree/FlagsTree'
 import Node from './../modules/Node'
-import { flagPathsSubTree } from './../modules/helpers'
-import { Icon } from 'antd'
-import Modal from './Modal/Modal'
-import NV from '../models/NodeValue.model'
 import Stage from './../modules/Stage'
+import { flagPathsSubTree } from './../modules/helpers'
+import './app.scss'
 
 class App extends Component<any, any> {
   constructor(props: any) {
@@ -34,42 +34,29 @@ class App extends Component<any, any> {
     }
   }
 
-  public componentDidMount() {
-    // TODO: REMOVE!
-    window.addEventListener('keydown', (e: KeyboardEvent) => {
-      if (e.key === 'v') {
-        this.selectedAnswer(false)
-      }
-    })
-  }
-
   public onSelectedFlag = (path: string) => {
-    const selected = this.state.flags[path].setIsSelected(true)
-    const flags = {
-      ...this.state.flags
-    }
-    flags[path] = selected
+    const selected = this.state.flags[path]
+    selected.setIsSelected(true)
     this.setState({
-      flags,
       stage: Stage.Questions
     })
   }
 
   public selectedAnswer = (answer: boolean) => {
-    const { currentNode } = this.state
+    const { currentNode, stage, flags } = this.state
+    if (stage !== Stage.Questions) {
+      return
+    }
     const nextNode: Node<NV> = answer ? currentNode.right : currentNode.left
-    // console.log(flagPathsSubTree(nextNode))
-    // console.log(nextNode)
-    if (nextNode.isLeaf()) {
-      // console.log(nextNode.value.flagPaths)
 
+    App.rejectFlags(flags, nextNode)
+
+    if (nextNode.isLeaf()) {
       this.setState({
         stage: Stage.End,
         showModal: true,
         finalFlags: nextNode.value.flagPaths
       })
-      // zmien stan na end, zebyw  pasku pojawilo sie pytanie o ponowna gre
-      // wyswietl modal z wynikami
     } else {
       this.setState({
         currentNode: nextNode
@@ -77,22 +64,59 @@ class App extends Component<any, any> {
     }
   }
 
+  private static rejectFlags(flags: Flag[], node: Node<NV>) {
+    const nextFlagsLeft: string[] = flagPathsSubTree(node)
+
+    Object.entries<Flag>(flags).forEach(([path, flag]) => {
+      if (!nextFlagsLeft.includes(path)) {
+        flag.setIsRejected(true)
+      }
+    })
+  }
+
   public handleClose = () => {
     this.setState({ showModal: false })
+  }
+
+  public handleKeyAnswer = (e: KeyboardEvent) => {
+    if (e.key === 'n') {
+      this.selectedAnswer(false)
+    } else if (e.key === 'y') {
+      this.selectedAnswer(true)
+    }
+  }
+
+  public handleReset = () => {
+    const { flags } = this.state
+    Object.entries<Flag>(flags).forEach(([_, flag]) => {
+      flag.reset()
+    })
+
+    this.setState({
+      currentNode: FT.root,
+      stage: Stage.FlagSelecting,
+      finalFlags: null
+    })
   }
 
   public render() {
     const { flags, finalFlags, currentNode, stage, showModal } = this.state
 
     return (
-      <section className="app-container">
+      <section
+        className="app-container"
+        tabIndex={0}
+        onKeyDown={this.handleKeyAnswer}
+      >
         <TopNav
           question={currentNode.value.question}
           stage={stage}
           selectedAnswer={this.selectedAnswer}
+          reset={this.handleReset}
         />
         <Flags
           flags={Object.values(flags)}
+          stage={stage}
           selectedFlag={this.onSelectedFlag}
         />
         {showModal && (
