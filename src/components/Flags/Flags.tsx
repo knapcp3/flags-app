@@ -20,7 +20,9 @@ export default class Flags extends Component<any, any> {
   }
 
   public componentDidMount() {
-    this.flagsRef.current.addEventListener('click', this.handleFlagsClick)
+    if (this.props.stage === Stage.FlagSelecting) {
+      this.flagsRef.current.addEventListener('click', this.handleFlagsClick)
+    }
   }
 
   public componentDidUpdate(prevProps: any) {
