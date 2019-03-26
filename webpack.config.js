@@ -16,7 +16,7 @@ module.exports = {
     contentBase: './dist'
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.jsx', '.json', '.js']
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
   },
   module: {
     rules: [
@@ -26,7 +26,12 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-react', '@babel/preset-typescript']
+            presets: [
+              '@babel/preset-react',
+              '@babel/preset-typescript'
+            ],
+
+            plugins: ['@babel/plugin-proposal-class-properties']
           }
         }
       },
@@ -36,7 +41,15 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader']
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name]',
+              outputPath: 'img'
+            }
+          }
+        ]
       }
     ]
   },
